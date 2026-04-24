@@ -1,0 +1,57 @@
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+    background-color: #d77bba;
+}
+
+h1 {
+    font-family: "Press Start 2P";
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+img {
+    display: block;
+    margin: auto;
+    padding-top: 10%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+ul li a {
+    font-family: "Press Start 2P";
+    color: white;
+    font-size: 25px;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: gray;
+}
+
+.current-page {
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
+p {
+    font-family: "Press Start 2P";
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
