@@ -2,10 +2,10 @@
 <html>
     <head>
         <link rel='stylesheet' href="styles.css">
-        <link rel="icon" href="images/SymbolTrans400.png">
+        <link rel="icon" href="images/normal.png">
         <title>Joshua Yee Games</title>
     </head>
-    <body>
+    <body id="homepage-body" onmousemove="lookAtMouse(event)" onmouseleave="lookNormal(event)">
         <h1>JOSHUA YEE GAMES</h1>
         <h2>
             <ul>
@@ -17,6 +17,46 @@
                 </li>
             </ul>
         </h2>
-        <img src="images/SymbolTrans400.png" alt="symbol">
+        <img id="symbol" src="images/normal.png" alt="symbol">
+    
+    <script>
+        function lookAtMouse(event) {
+            let x = event.clientX;
+            let y = event.clientY;
+            let symbol = document.getElementById("symbol");
+
+            let centerX = window.innerWidth / 2;
+            let centerY = window.innerHeight / 2;
+            let heightSlice = window.innerHeight / 4;
+            let upperCenterY = centerY - heightSlice;
+            let lowerCenterY = centerY + heightSlice;
+
+            if (x > centerX) {
+                if (y < upperCenterY) {
+                    symbol.setAttribute("src", "images/RightSuperUp.png");
+                } else if (y > upperCenterY && y < centerY) {
+                    symbol.setAttribute("src", "images/RightUp.png");
+                } else if (y > centerY && y < lowerCenterY){
+                    symbol.setAttribute("src", "images/RightDown.png");
+                } else {
+                    symbol.setAttribute("src", "images/RightSuperDown.png");
+                }
+            } else {
+                if (y < upperCenterY) {
+                    symbol.setAttribute("src", "images/LeftSuperUp.png");
+                } else if (y > upperCenterY && y < centerY) {
+                    symbol.setAttribute("src", "images/LeftUp.png");
+                } else if (y > centerY && y < lowerCenterY){
+                    symbol.setAttribute("src", "images/LeftDown.png");
+                } else {
+                    symbol.setAttribute("src", "images/LeftSuperDown.png");
+                }
+            }
+        }
+
+        function lookNormal(event) {
+            document.getElementById("symbol").setAttribute("src", "images/normal.png");
+        }
+    </script>
     </body>
 </html>
